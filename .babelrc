@@ -1,0 +1,53 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            // {
+            //     "useBuiltIns": "usage",
+            //     "corejs": "3.25",
+            //     "debug": true
+            // }
+        ],
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic", // React17新JSX转换规则
+            }
+        ],
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": 3
+            }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": "css"
+            }
+        ],
+        [
+            "react-css-modules",
+            {
+                "filetypes": {
+                    ".less": {
+                        "syntax": "postcss-less"
+                    }
+                },
+                "generateScopedName": "[folder]__[name]__[local]",
+                "handleMissingStyleName": "warn"
+            }
+        ],
+        // [
+        //     "module-resolver",
+        //     {
+        //         "extensions": [".ts", ".tsx", ".js", ".jsx"]
+        //     }
+        // ]
+    ]
+}

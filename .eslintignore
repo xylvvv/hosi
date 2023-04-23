@@ -1,0 +1,8 @@
+dist
+es
+lib
+node_modules
+# *.d.ts
+typings
+.umi
+.umi-production
