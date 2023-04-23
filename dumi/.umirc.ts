@@ -3,7 +3,7 @@ import path from 'path'
 import pkg from '../package.json'
 
 export default defineConfig({
-    title: 'zafuru',
+    title: 'hosi',
     mode: 'site',
     mfsu: {},
     resolve: {

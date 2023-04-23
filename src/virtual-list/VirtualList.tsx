@@ -98,7 +98,7 @@ export const VirtualList = <T,>(props: IVirtualListProps<T>) => {
     }
   }, [dataSource]);
 
-  useEffect(() => {
+  useUpdate(() => {
     // 更新每项位置信息及列表高度
     const containerEl = container.current as HTMLDivElement;
     const holderEl = holder.current as HTMLDivElement;

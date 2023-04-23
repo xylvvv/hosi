@@ -15,12 +15,12 @@ const VirtualListBasic = () => {
     setTimeout(() => {
       const data = [];
       let id = list.length;
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 100; i++) {
         data.push({ title: `标题 - ${++id}`, desc: faker.lorem.sentences() });
       }
       setList([...list, ...data]);
       state.loaded();
-      if (data.length + list.length >= 100) {
+      if (data.length + list.length >= 1000) {
         state.complete();
       }
     }, 300);
