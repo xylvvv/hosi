@@ -159,11 +159,7 @@ export const VirtualList = <T,>(props: IVirtualListProps<T>) => {
     const aboveCount = Math.min(start, visibleCount * BUFFER_SCALE);
     const belowCount = Math.min(caches.length - end, visibleCount * BUFFER_SCALE);
     setRenderList(caches.slice(start - aboveCount, end + belowCount));
-    let startOffset = 0;
-    if (start >= 1) {
-      const size = caches[start].top - (caches[start - aboveCount] ? caches[start - aboveCount].top : 0);
-      startOffset = caches[start - 1].bottom - size;
-    }
+    const startOffset = caches[start - aboveCount] ? caches[start - aboveCount].top : 0;
     listEl.style.transform = `translate3d(0,${startOffset}px,0)`;
   }, [start]);
 
