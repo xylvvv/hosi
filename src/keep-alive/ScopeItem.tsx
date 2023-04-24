@@ -1,4 +1,4 @@
-import { FC, ReactNode, memo, useEffect, useRef } from 'react';
+import { FC, ReactNode, memo, useEffect, useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { CACHE_STATUS } from './reducer';
 
@@ -12,7 +12,7 @@ const ScopeItem: FC<IScopeItem> = (props) => {
   const { reactElement, load, status } = props;
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     return () => {
       document.body.appendChild(ref.current as HTMLDivElement);
     };
